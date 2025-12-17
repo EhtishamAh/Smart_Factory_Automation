@@ -1,0 +1,18 @@
+# ============================================================================
+# Python Dependencies for Smart Factory Supabase Bridge
+# ============================================================================
+# Install these packages using: pip install -r requirements.txt
+# ============================================================================
+
+# Supabase Python Client
+supabase>=2.0.0
+
+# HTTP Requests (already included in standard library, but listed for completeness)
+requests>=2.31.0
+
+# Python Standard Library (no installation needed)
+# - http.server
+# - json
+# - datetime
+# - os
+# - typing

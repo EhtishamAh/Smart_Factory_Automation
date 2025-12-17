@@ -1,0 +1,32 @@
+# Ignore Python virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Ignore config file with sensitive data
+config.py
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log
+
+# Ignore test files
+test_*.py
+*_test.py
