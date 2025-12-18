@@ -271,39 +271,41 @@ export default function Home() {
             </div>
 
             {/* Analytics Charts Section */}
-            <div className="mt-12 fade-in">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="p-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl shadow-lg">
-                  <Activity className="w-7 h-7 text-white" />
+            {selectedFactory && (
+              <div className="mt-12 fade-in">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="p-3 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl shadow-lg">
+                    <Activity className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                      Data Analytics & Trends
+                    </h2>
+                    <p className="text-gray-400 text-sm mt-1">Real-time system performance metrics</p>
+                  </div>
                 </div>
-                <div>
-                  <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                    Data Analytics & Trends
-                  </h2>
-                  <p className="text-gray-400 text-sm mt-1">Real-time system performance metrics</p>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  {/* Row 1: Temperature & Battery */}
+                  <TemperatureChart factoryTable={selectedFactory.factory_table_name} />
+                  <BatteryChart factoryTable={selectedFactory.factory_table_name} />
+                  
+                  {/* Row 2: Conveyor & Weight */}
+                  <ConveyorChart factoryTable={selectedFactory.factory_table_name} />
+                  <WeightChart factoryTable={selectedFactory.factory_table_name} />
+                  
+                  {/* Row 3: Energy Management */}
+                  <div className="lg:col-span-2">
+                    <EnergyChart factoryTable={selectedFactory.factory_table_name} />
+                  </div>
+                  
+                  {/* Row 4: System Activity (Full Width) */}
+                  <div className="lg:col-span-2">
+                    <SystemActivityChart factoryTable={selectedFactory.factory_table_name} />
+                  </div>
                 </div>
               </div>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {/* Row 1: Temperature & Battery */}
-                <TemperatureChart factoryTable={selectedFactory.factory_table_name} />
-                <BatteryChart factoryTable={selectedFactory.factory_table_name} />
-                
-                {/* Row 2: Conveyor & Weight */}
-                <ConveyorChart factoryTable={selectedFactory.factory_table_name} />
-                <WeightChart factoryTable={selectedFactory.factory_table_name} />
-                
-                {/* Row 3: Energy Management */}
-                <div className="lg:col-span-2">
-                  <EnergyChart factoryTable={selectedFactory.factory_table_name} />
-                </div>
-                
-                {/* Row 4: System Activity (Full Width) */}
-                <div className="lg:col-span-2">
-                  <SystemActivityChart factoryTable={selectedFactory.factory_table_name} />
-                </div>
-              </div>
-            </div>
+            )}
           </>
         )}
       </main>
