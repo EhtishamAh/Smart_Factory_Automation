@@ -173,7 +173,7 @@ export default function Home() {
               </div>
               <div>
                 <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Smart Factory Dashboard
+                  Dummy Work
                 </h1>
                 <p className="text-gray-400 text-sm mt-1 flex items-center gap-2">
                   <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
